@@ -3,15 +3,28 @@ var legH=140;
 var tvY=145;
 var body=99+1;
 var ten=10;
-var chest= 0;
+var max_distance;
+
   
+
 function setup() {
   createCanvas(300,550);
+  noStroke();
+  max_distance= dist(0,0,width,height);
+
 }
 
 function draw() {
   background(252,184,234);
   strokeWeight(2);
+     for(var i = 0; i <= width; i += 20) {
+    for(var j = 0; j <= height; j += 20) {
+      var size = dist(mouseX, mouseY, i, j);
+      size = size/max_distance * 66;
+      ellipse(i, j, size, size);
+    }
+  } 
+}
 
   //body
   fill(121,180,199);
@@ -32,19 +45,15 @@ function draw() {
   //head
   rect(105,100,90,70);
   
-  //antenna
-  line(149,100,149,60);
-
-  if (mouseIsPressed==true){
-  fill(0,146,215);
-} else {
-  fill(227,60,57);
-}
-  //antenna ball
-  ellipse(149,60,20,20);
-  
   //chest
   rect(120,190,60,130);
+  
+  //antenna
+  line(149,100,149,60);
+  
+  //antenna ball
+  fill(227,60,57);
+  ellipse(149,60,20,20);
   
   //left eye
   rect(125,120,ten,ten);
@@ -65,5 +74,7 @@ function draw() {
   line(150,tvY,150,160);
   line(160,tvY,160,160);
   line(170,tvY,170,160);
+}
+
 
 }
