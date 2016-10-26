@@ -33,7 +33,7 @@ function setup() {
 }
 
 function draw() {
-  
+
   strokeWeight(2);
 
   //body
@@ -144,7 +144,7 @@ function mousePressed() {
       break;
 
     case 'area2':
-      brushColor=(random(colorArray));
+      brushColor = (random(colorArray));
       break;
 
     case 'area3':
